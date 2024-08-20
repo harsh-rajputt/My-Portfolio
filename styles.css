@@ -16,6 +16,7 @@ header {
     background: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
     z-index: 1000;
+    
 }
 
 nav ul {
@@ -81,7 +82,7 @@ nav ul li a {
 
 .profile-pic img {
     max-width: 100%;
-    border-radius: 50%;
+    box-shadow: #000;
 }
 
 
@@ -105,8 +106,8 @@ nav ul li a {
 .profile img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    border: 5px solid #ffa500;
+    border-radius:50%;
+    
 }
 
 .profile ul {
@@ -292,6 +293,7 @@ nav ul li a {
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
+
 
 .detail {
     flex: 1 1 20%;
