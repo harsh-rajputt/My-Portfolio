@@ -6,36 +6,54 @@ body {
     background-color: #000;
     color: #fff;
     line-height: 1.6;
-}
-
-header {
-    position: absolute;
-    top: 0;
     width: 100%;
-    padding: 10px 5%;
-    background: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
-    z-index: 1000;
-    
 }
 
-nav ul {
+.header {
     display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+   
+
+    position: relative;
+  
+    height: 100px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the header */
+    max-width: 1300px; /* Adjust max-width as needed */
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.name {
+    font-size: 30px; /* Adjust size as needed */
+    color: #ffffff; /* Adjust color as needed */
     font-weight: bold;
-    font-size: 1em;
+    font-family: cursive;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffb900;
 }
 
 #home {
