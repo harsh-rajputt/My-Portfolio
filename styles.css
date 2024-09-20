@@ -215,7 +215,7 @@ body {
     position: relative;
 }
 
-#projects {
+ #projects {
     padding: 50px 5%;
 }
 
@@ -287,7 +287,8 @@ body {
 
 .project-card h4 a:hover {
     color: #fff;
-}
+} 
+
 #contact {
     background-color: #000;
     color: #fff;
