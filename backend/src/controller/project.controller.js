@@ -8,8 +8,8 @@ import { ApiResponse } from "../utils/apiResponse.js";
 
 const createProject = asyncHandler(async (req, res, next) => {
     try {
-        const { name, description, startDate, endDate } = req.body;
-        const project = new Project({ name, description, startDate, endDate });
+        const { title, description, imageUrl, technologies, github, liveUrl, featured } = req.body;
+        const project = new Project({ title, description, imageUrl, technologies, github, liveUrl, featured });
         await project.save();
         res
             .status(201)

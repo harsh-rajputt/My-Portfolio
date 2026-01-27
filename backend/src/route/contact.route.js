@@ -9,8 +9,8 @@ import {
 
 const router = Router();
 
-router.post('/', createContactMessage);
-router.get('/', getAllContactMessages);
+router.post('/create', createContactMessage);
+router.get('/all', getAllContactMessages);
 router.patch('/:id/status', updateContactMessageStatus);
 
 export default router;

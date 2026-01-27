@@ -123,28 +123,7 @@ The app will run on `http://localhost:3000`
 
 ```
 mern-portfolio/
-├── client/                 # React frontend
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   │   ├── Navigation.js
-│   │   │   ├── Navigation.css
-│   │   │   ├── Hero.js
-│   │   │   ├── Hero.css
-│   │   │   ├── ProjectCard.js
-│   │   │   └── ProjectCard.css
-│   │   ├── pages/         # Page components
-│   │   │   ├── Home.js
-│   │   │   ├── Home.css
-│   │   │   ├── Contact.js
-│   │   │   └── Contact.css
-│   │   ├── styles/        # Global styles
-│   │   │   └── global.css
-│   │   ├── api.js         # API utilities
-│   │   ├── App.js         # Main app component
-│   │   └── index.js       # Entry point
-│   └── package.json
+
 │
 └── server/                # Node.js backend
     ├── config/

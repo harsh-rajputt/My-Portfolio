@@ -11,11 +11,11 @@ import {
 
 const router = Router();
 
-router.post('/', createProject);
-router.get('/', getAllProjects);
+router.post('/create', createProject);
+router.get('/all', getAllProjects);
 router.get('/featured', getFeaturedProjects);
-router.get('/:id', getSingleProject);
-router.put('/:id', updateProject);
-router.delete('/:id', deleteProject);
+router.get('/projects/:id', getSingleProject);
+router.put('/update/:id', updateProject);
+router.delete('/delete/:id', deleteProject);
 
 export default router;
