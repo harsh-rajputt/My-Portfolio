@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "mern",
+    "api"
+  ],
+  "author": "Harsh Rajput",
+  "license": "ISC",
+  "description": "Backend API for MERN Portfolio",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5",
+    "nodemailer": "^7.0.12"
+  }
+}
