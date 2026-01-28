@@ -9,7 +9,7 @@ import {
 
 const router = Router();
 
-router.post('/create', createContactMessage);
+router.post('/', createContactMessage);
 router.get('/all', getAllContactMessages);
 router.patch('/:id/status', updateContactMessageStatus);
 
