@@ -12,21 +12,26 @@ const handler = async (req, res) => {
     // Debugging logs
     console.log("Incoming Request:", req.url);
 
-    if (!process.env.MONGODB_URI) {
-        console.error("CRITICAL ERROR: MONGODB_URI is undefined!");
-        return res.status(500).json({ error: "Server Configuration Error: Database URI missing" });
-    }
+    try {
+        if (!process.env.MONGODB_URI) {
+            console.error("CRITICAL ERROR: MONGODB_URI is undefined!");
+            return res.status(500).json({ error: "Server Configuration Error: Database URI missing" });
+        }
 
-    if (!isConnected) {
-        try {
+        if (!isConnected) {
             await connectDB();
             isConnected = true;
-        } catch (error) {
-            console.error("Database connection failed inside handler:", error);
-            return res.status(500).json({ error: "Database Connection Failed", details: error.message });
         }
+
+        return app(req, res);
+    } catch (error) {
+        console.error("CRITICAL SERVER ERROR:", error);
+        return res.status(500).json({
+            error: "Internal Server Error",
+            message: error.message,
+            stack: error.stack
+        });
     }
-    return app(req, res);
 };
 
 export default handler;
