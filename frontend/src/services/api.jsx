@@ -16,10 +16,10 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     // You can add auth tokens here if needed
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
@@ -49,31 +49,37 @@ api.interceptors.response.use(
 export const projectsAPI = {
   // Get all projects
   getAll: () => api.get('/projects'),
-  
+
   // Get featured projects only
   getFeatured: () => api.get('/projects/featured'),
-  
+
   // Get single project by ID
   getById: (id) => api.get(`/projects/${id}`),
-  
+
   // Create new project (admin only)
   create: (data) => api.post('/projects', data),
-  
+
   // Update project (admin only)
   update: (id, data) => api.put(`/projects/${id}`, data),
-  
+
   // Delete project (admin only)
-  delete: (id) => api.delete(`/projects/${id}`),
+  delete: (id) => api.delete(`/projects/delete/${id}`),
+};
+
+// Auth API endpoints
+export const authAPI = {
+  login: (credentials) => api.post('/auth/login', credentials),
+  // register: (data) => api.post('/auth/register', data), // Optional: internal use
 };
 
 // Contacts API endpoints
 export const contactsAPI = {
   // Send contact message
   create: (data) => api.post('/contacts', data),
-  
+
   // Get all contacts (admin only)
   getAll: () => api.get('/contacts'),
-  
+
   // Update contact status (admin only)
   updateStatus: (id, status) => api.patch(`/contacts/${id}/status`, { status }),
 };

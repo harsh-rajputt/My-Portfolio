@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { contactsAPI } from '../services/api.jsx'; // Ensure path matches your api helper
 
 const Contact = () => {
@@ -65,7 +65,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: <FaGithub />, href: 'https://github.com/harsh-rajputt', label: 'GitHub' },
     { icon: <FaLinkedin />, href: 'https://linkedin.com/in/harsh-raj-481837263/', label: 'LinkedIn' },
-    { icon: <FaTwitter />, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: <FaInstagram />, href: 'https://instagram.com', label: 'Instagram' },
   ];
 
   return (
@@ -148,7 +148,7 @@ const Contact = () => {
             className="lg:col-span-2"
           >
             <form onSubmit={handleSubmit} className="bg-white border border-gray-100 rounded-[32px] p-8 md:p-10 shadow-large">
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-8  mb-8">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-bold text-gray-dark ml-1">Name</label>
                   <input

@@ -12,6 +12,9 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+  /* 
+   * Backend is running now, restoring API functionality
+   */
   const fetchProjects = async () => {
     try {
       setLoading(true);
@@ -23,8 +26,8 @@ const Projects = () => {
       const projectsArray = Array.isArray(response?.data)
         ? response.data
         : Array.isArray(response?.data?.data)
-        ? response.data.data
-        : [];
+          ? response.data.data
+          : [];
 
       if (projectsArray.length === 0) {
         throw new Error('Projects array empty');
@@ -39,25 +42,25 @@ const Projects = () => {
       setProjects([
         {
           _id: '1',
-          title: 'E-Commerce Platform',
+          title: 'YouTube',
           description:
-            'A full-featured e-commerce platform with authentication, product management, cart, and payment integration.',
+            'Video streaming platform with user authentication .',
           image:
             'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-          technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-          github: 'https://github.com',
-          liveUrl: 'https://example.com',
+          technologies: ['Express', 'Node.js', 'MongoDB', 'JWT', 'Cloudinary'],
+          github: 'https://github.com/harsh-rajputt/YouTube',
+          liveUrl: '#',
         },
         {
           _id: '2',
-          title: 'Task Management App',
+          title: 'MegaBlog',
           description:
-            'Collaborative task management tool with real-time updates and team features.',
+            'A blog platform with user authentication and content management.',
           image:
             'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
-          technologies: ['React', 'Express', 'PostgreSQL', 'Socket.io'],
-          github: 'https://github.com',
-          liveUrl: 'https://example.com',
+          technologies: ['React', 'Appwrite', 'Redux', 'TinyMCE'],
+          github: 'https://github.com/harsh-rajputt/MegaBlog',
+          liveUrl: 'mega-blog-murex-gamma.vercel.app',
         },
         {
           _id: '3',
@@ -75,6 +78,10 @@ const Projects = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   if (loading) {
     return (

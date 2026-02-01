@@ -27,7 +27,7 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-lg text-gray-medium mb-8 leading-relaxed max-w-xl">
-              BCA Graduate specializing in MERN Stack Development. Passionate about building scalable web applications with modern technologies.
+              Full-Stack Developer with BCA degree and expertise in MERN stack development and modern web technologies. Proficient in building scalable web applications using React, Node.js, Express, and MongoDB. Experienced in creating production-ready applications with RESTful APIs.
             </p>
 
             {/* Action Buttons */}
@@ -41,7 +41,7 @@ const Hero = () => {
                 <FaGithub className="text-xl" />
                 GitHub
               </a>
-              
+
               <a
                 href="https://linkedin.com/in/harsh-raj-481837263/"
                 target="_blank"
@@ -51,7 +51,7 @@ const Hero = () => {
                 <FaLinkedin className="text-xl" />
                 LinkedIn
               </a>
-              
+
               <a
                 href="mailto:harshraj9162192367@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 text-gray-dark rounded-lg font-medium hover:border-primary-blue hover:text-primary-blue transition-all"
@@ -88,13 +88,13 @@ const Hero = () => {
                   {/* Placeholder for profile image */}
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                     {/* Replace this div with actual image */}
-                    <img 
+                    <img
                       src="image.png"
                       alt="Harsh Raj"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
+
                   {/* Decorative gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
                 </div>
@@ -107,13 +107,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Made in Bolt Badge */}
-        <div className="mt-20 flex justify-end">
-          <div className="inline-flex items-center gap-2 text-sm text-gray-medium">
-            <span className="font-semibold">⚡</span>
-            <span>Made in Bolt</span>
-          </div>
-        </div>
+
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 
 import { Router } from 'express';
 import {
-     createProject,
+    createProject,
     getAllProjects,
     getFeaturedProjects,
     getSingleProject,
@@ -9,13 +9,19 @@ import {
     deleteProject
 } from '../controller/project.controller.js';
 
+
+import { verifyJWT, verifyAdmin } from '../middleware/auth.middleware.js';
+
 const router = Router();
 
-router.post('/create', createProject);
+// Public routes
 router.get('/all', getAllProjects);
 router.get('/featured', getFeaturedProjects);
 router.get('/projects/:id', getSingleProject);
-router.put('/update/:id', updateProject);
-router.delete('/delete/:id', deleteProject);
+
+// Protected routes (Admin only)
+router.post('/create', verifyJWT, verifyAdmin, createProject);
+router.put('/update/:id', verifyJWT, verifyAdmin, updateProject);
+router.delete('/delete/:id', verifyJWT, verifyAdmin, deleteProject);
 
 export default router;

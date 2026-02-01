@@ -1,19 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaReact, FaNodeJs, FaDatabase, FaPython, 
-  FaGitAlt, FaCode, FaServer, FaTerminal 
+import {
+  FaReact, FaNodeJs, FaDatabase, FaPython,
+  FaGitAlt, FaCode, FaServer, FaTerminal
 } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiTailwindcss, SiJavascript } from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
     {
+      title: "Languages & Core",
+      skills: [
+        { name: "JavaScript (ES6+)", icon: <SiJavascript className="text-yellow-400" /> },
+        { name: "C / C++", icon: <FaCode className="text-blue-500" /> },
+        { name: "HTML5 / CSS3", icon: <FaCode className="text-orange-500" /> },
+      ]
+    },
+    {
       title: "Frontend Development",
       skills: [
         { name: "React.js", icon: <FaReact className="text-blue-500" /> },
-        { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
         { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+        { name: "Responsive Design", icon: <FaCode className="text-purple-500" /> },
       ]
     },
     {
@@ -21,16 +29,17 @@ const Skills = () => {
       skills: [
         { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
         { name: "Express.js", icon: <SiExpress className="text-gray-600" /> },
-        { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+        { name: "MongoDB / Mongoose", icon: <SiMongodb className="text-green-600" /> },
+        { name: "RESTful APIs", icon: <FaServer className="text-blue-400" /> },
         { name: "SQL", icon: <FaDatabase className="text-blue-600" /> },
       ]
     },
     {
       title: "Tools & Others",
       skills: [
-        { name: "Python", icon: <FaPython className="text-blue-400" /> },
-        { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
-        { name: "Hadoop", icon: <FaServer className="text-yellow-600" /> },
+        { name: "Git / GitHub", icon: <FaGitAlt className="text-orange-600" /> },
+        { name: "Postman", icon: <FaTerminal className="text-orange-400" /> },
+        { name: "Cloudinary", icon: <FaServer className="text-blue-300" /> },
       ]
     }
   ];
@@ -40,14 +49,14 @@ const Skills = () => {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-primary-blue font-bold tracking-widest uppercase text-sm"
           >
             Technical Stack
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-dark mt-3"

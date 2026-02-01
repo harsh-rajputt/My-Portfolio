@@ -4,38 +4,38 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Full-Stack Developer',
-      company: 'Tech Solutions Pvt Ltd',
-      period: '2023 - Present',
-      location: 'Noida, India',
+      title: 'Web Development Intern',
+      company: 'The Website Maker',
+      period: 'Jul 2024 – Aug 2024',
+      location: 'Remote, India',
       description: [
-        'Developed and maintained full-stack web applications using MERN stack',
-        'Collaborated with cross-functional teams to deliver high-quality products',
-        'Implemented RESTful APIs and optimized database queries for better performance',
-        'Mentored junior developers and conducted code reviews',
-      ],
-    },
-    {
-      title: 'Frontend Developer Intern',
-      company: 'Digital Innovations',
-      period: '2022 - 2023',
-      location: 'Remote',
-      description: [
-        'Built responsive user interfaces using React and Tailwind CSS',
-        'Integrated third-party APIs and services',
-        'Participated in agile development processes',
-        'Contributed to open-source projects',
+        'Completed intensive training in modern web technologies including HTML5, CSS3, JavaScript, and animation libraries.',
+        'Delivered production-ready projects demonstrating proficiency in frontend development.',
       ],
     },
   ];
 
   const education = [
     {
-      degree: 'Bachelor of Computer Applications (BCA)',
-      institution: 'University Name', // Update with your specific college/university
-      period: '2020 - 2023',
-      location: 'Noida, India',
-      description: 'Specialized in Software Development and Web Technologies',
+      degree: 'Bachelor of Computer Application (BCA)',
+      institution: 'Teerthankar Mahaveer University, Moradabad',
+      period: 'May 2022 – May 2025 (Expected)',
+      location: 'Moradabad, India',
+      description: 'Relevant Coursework: Data Structures, DBMS, Operating Systems, C/C++ Programming, Software Engineering, OOP',
+    },
+    {
+      degree: 'Intermediate (Science)',
+      institution: 'Central Public School',
+      period: 'Completed May 2022',
+      location: 'India',
+      description: '',
+    },
+    {
+      degree: 'Matriculation',
+      institution: 'Nutan Shiksha Niketan',
+      period: 'Completed May 2020',
+      location: 'India',
+      description: '',
     },
   ];
 
@@ -44,14 +44,14 @@ const Experience = () => {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-primary-blue font-bold tracking-widest uppercase text-sm"
           >
             My Journey
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-dark mt-3"
@@ -59,7 +59,7 @@ const Experience = () => {
             Experience & Education
           </motion.h2>
         </div>
-          
+
         <div className="max-w-4xl mx-auto">
           {/* Work Experience */}
           <div className="mb-20">
@@ -67,7 +67,7 @@ const Experience = () => {
               <span className="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary-blue">💼</span>
               Work Experience
             </h3>
-            
+
             <div className="space-y-12">
               {experiences.map((exp, index) => (
                 <motion.div
@@ -80,7 +80,7 @@ const Experience = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute -left-[9px] top-0 w-4 h-4 bg-primary-blue rounded-full border-4 border-white shadow-sm"></div>
-                  
+
                   <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                       <div>
@@ -92,7 +92,7 @@ const Experience = () => {
                         <p className="text-gray-400 text-xs mt-2 uppercase tracking-wide font-bold">{exp.location}</p>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
                         <li key={i} className="text-gray-medium text-sm md:text-base leading-relaxed flex items-start gap-3">
@@ -113,7 +113,7 @@ const Experience = () => {
               <span className="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary-blue">🎓</span>
               Education
             </h3>
-            
+
             <div className="space-y-12">
               {education.map((edu, index) => (
                 <motion.div
@@ -125,7 +125,7 @@ const Experience = () => {
                   className="relative pl-10 border-l-2 border-primary-blue/20"
                 >
                   <div className="absolute -left-[9px] top-0 w-4 h-4 bg-primary-blue rounded-full border-4 border-white shadow-sm"></div>
-                  
+
                   <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
                       <div>
