@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { projectsAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const AdminDashboard = () => {
     const [projects, setProjects] = useState([]);
@@ -24,9 +24,19 @@ const AdminDashboard = () => {
         featured: false
     });
 
+    const location = useLocation();
+
     useEffect(() => {
         fetchProjects();
     }, []);
+
+    useEffect(() => {
+        if (location.state?.editProject) {
+            handleEdit(location.state.editProject);
+            // Clear state so it doesn't reopen on refresh (optional but good UX)
+            // navigate(location.pathname, { replace: true, state: {} });
+        }
+    }, [location.state]);
 
     const fetchProjects = async () => {
         try {

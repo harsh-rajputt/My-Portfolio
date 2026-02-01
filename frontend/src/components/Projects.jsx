@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaEdit } from 'react-icons/fa';
 import { projectsAPI } from '../services/api';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -156,6 +160,15 @@ const Projects = () => {
                         >
                           <FaExternalLinkAlt />
                         </a>
+                      )}
+                      {user && user.role === 'admin' && (
+                        <button
+                          onClick={() => navigate('/admin', { state: { editProject: project } })}
+                          className="p-3 bg-white rounded-full hover:bg-yellow-500 hover:text-white transition"
+                          title="Edit Project"
+                        >
+                          <FaEdit />
+                        </button>
                       )}
                     </div>
                   </div>
