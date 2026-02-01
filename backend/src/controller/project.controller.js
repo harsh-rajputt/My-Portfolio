@@ -1,7 +1,7 @@
-import {Project} from '../model/project.model.js';
+import { Project } from '../model/project.model.js';
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/apiError.js";
-import { ApiResponse } from "../utils/apiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
 
 // Create a new project
@@ -14,7 +14,7 @@ const createProject = asyncHandler(async (req, res, next) => {
         res
             .status(201)
             .json(new ApiResponse(true, "Project created successfully", project));
-    
+
     } catch (error) {
         throw new ApiError(500, "Internal Server Error");
     }
@@ -99,7 +99,7 @@ const deleteProject = asyncHandler(async (req, res, next) => {
     }
 });
 
-export { 
+export {
     createProject,
     getAllProjects,
     getFeaturedProjects,
