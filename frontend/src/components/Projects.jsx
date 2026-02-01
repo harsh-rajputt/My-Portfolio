@@ -60,7 +60,7 @@ const Projects = () => {
             'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
           technologies: ['React', 'Appwrite', 'Redux', 'TinyMCE'],
           github: 'https://github.com/harsh-rajputt/MegaBlog',
-          liveUrl: 'mega-blog-murex-gamma.vercel.app',
+          liveUrl: 'https://mega-blog-murex-gamma.vercel.app',
         },
         {
           _id: '3',
