@@ -9,9 +9,22 @@ dotenv.config();
 let isConnected = false;
 
 const handler = async (req, res) => {
+    // Debugging logs
+    console.log("Incoming Request:", req.url);
+
+    if (!process.env.MONGODB_URI) {
+        console.error("CRITICAL ERROR: MONGODB_URI is undefined!");
+        return res.status(500).json({ error: "Server Configuration Error: Database URI missing" });
+    }
+
     if (!isConnected) {
-        await connectDB();
-        isConnected = true;
+        try {
+            await connectDB();
+            isConnected = true;
+        } catch (error) {
+            console.error("Database connection failed inside handler:", error);
+            return res.status(500).json({ error: "Database Connection Failed", details: error.message });
+        }
     }
     return app(req, res);
 };
