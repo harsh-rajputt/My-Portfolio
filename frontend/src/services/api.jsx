@@ -48,19 +48,19 @@ api.interceptors.response.use(
 // Projects API endpoints
 export const projectsAPI = {
   // Get all projects
-  getAll: () => api.get('/projects'),
+  getAll: () => api.get('/projects/all'),
 
   // Get featured projects only
   getFeatured: () => api.get('/projects/featured'),
 
   // Get single project by ID
-  getById: (id) => api.get(`/projects/${id}`),
+  getById: (id) => api.get(`/projects/projects/${id}`),
 
   // Create new project (admin only)
-  create: (data) => api.post('/projects', data),
+  create: (data) => api.post('/projects/create', data),
 
   // Update project (admin only)
-  update: (id, data) => api.put(`/projects/${id}`, data),
+  update: (id, data) => api.put(`/projects/update/${id}`, data),
 
   // Delete project (admin only)
   delete: (id) => api.delete(`/projects/delete/${id}`),
