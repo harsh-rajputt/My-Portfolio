@@ -41,12 +41,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-soft border-b border-gray-100' : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-soft border-b border-gray-100' : 'bg-transparent'
+      }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Name/Logo */}
           <button
             onClick={() => {
@@ -64,9 +63,8 @@ const Navigation = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-semibold transition-colors hover:text-primary-blue ${
-                  activeSection === link.id ? 'text-primary-blue' : 'text-gray-medium'
-                }`}
+                className={`text-sm font-semibold transition-colors hover:text-primary-blue ${activeSection === link.id ? 'text-primary-blue' : 'text-gray-medium'
+                  }`}
               >
                 {link.label}
               </button>
@@ -82,7 +80,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden p-2 text-gray-dark z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -101,26 +99,24 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-white/95 backdrop-blur-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+      <div
+        className={`absolute top-full left-0 w-full bg-white shadow-lg border-b border-gray-100 md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center py-6 gap-6">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`text-2xl font-semibold transition-colors hover:text-primary-blue ${
-                activeSection === link.id ? 'text-primary-blue' : 'text-gray-dark'
-              }`}
+              className={`text-lg font-medium transition-colors hover:text-primary-blue ${activeSection === link.id ? 'text-primary-blue' : 'text-gray-dark'
+                }`}
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-8 py-3 bg-primary-blue text-white rounded-xl text-xl font-semibold hover:bg-blue-600 transition-all shadow-md hover:shadow-primary-blue/20"
+            className="px-6 py-2.5 bg-primary-blue text-white rounded-xl text-base font-semibold hover:bg-blue-600 transition-all shadow-md hover:shadow-primary-blue/20"
           >
             Contact
           </button>
