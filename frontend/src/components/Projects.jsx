@@ -156,6 +156,7 @@ const Projects = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="p-3 bg-white rounded-full hover:bg-primary-blue hover:text-white transition"
                         >
                           <FaExternalLinkAlt />
