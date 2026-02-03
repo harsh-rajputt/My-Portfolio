@@ -87,6 +87,16 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
+  const ensureUrlProtocol = (url) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    return `https://${url}`;
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
   if (loading) {
     return (
       <section id="projects" className="py-20 bg-white">
@@ -143,7 +153,7 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center gap-4 pb-6">
                       {project.github && (
                         <a
-                          href={project.github}
+                          href={ensureUrlProtocol(project.github)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-3 bg-white rounded-full hover:bg-primary-blue hover:text-white transition"
@@ -153,7 +163,7 @@ const Projects = () => {
                       )}
                       {project.liveUrl && (
                         <a
-                          href={project.liveUrl}
+                          href={ensureUrlProtocol(project.liveUrl)}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
